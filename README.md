@@ -19,7 +19,7 @@ Request Method      : POST
 
 Requesty Headers    : Content-Type: application/json
 
-Request Body        : ```{
+Request Body        : ```json{
                         "username": "popeye",
                         "fullName": "Popeye",
                         "password": "popeye"
@@ -27,13 +27,13 @@ Request Body        : ```{
 
 Response Status Code: 201 Created
 
-Response Body       : {
+Response Body       : ```json{
                         "id": 4,
                         "username": "popeye",
                         "fullName": "Popeye",
                         "createdAt": "2021-04-18T11:05:16.745Z",
                         "updatedAt": "2021-04-18T11:05:16.745Z"
-                    }
+                    }```
 
 
 LOG IN DWEETER
@@ -46,16 +46,16 @@ Request Method      : POST
 
 Requesty Headers    : Content-Type: application/json
 
-Request Body        : {
+Request Body        : ```json{
                         "username": "popeye",
                         "password": "popeye"
-                    }
+                    }```
 
 Response Status Code: 200 OK
 
-Response Body       : {
+Response Body       : ```json{
                         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjE4NzQxNTc2fQ.GRsG-2RhepQQsQb6EA_bS2wZDWqYh6F3eFZuISckAR0"
-                    }
+                    }```
 
 GET DWEETER DETAILS
 -------------------
@@ -71,13 +71,13 @@ Requesty Headers    : Content-Type: application/json
 
 Response Status Code: 200 OK
 
-Response Body       : {
+Response Body       : ```json{
                         "id": 4,
                         "username": "popeye",
                         "fullName": "Popeye",
                         "createdAt": "2021-04-18T11:05:16.745Z",
                         "updatedAt": "2021-04-18T11:05:16.745Z"
-                    }
+                    }```
 
 
 GET FEED/DWEETS FROM FOLLOWERS
@@ -94,7 +94,7 @@ Requesty Headers    : Content-Type: application/json
 
 Response Status Code: 200 OK
 
-Response Body       : [{
+Response Body       : ```json[{
                         "id": 1,
                         "fullName": "polo",
                         "username": "polo",
@@ -115,7 +115,7 @@ Response Body       : [{
                         "dweetText": "Charlie Brown's first Dweet",
                         "dweetImg": "",
                         "createdAt": "2021-04-18 11:06:54.767 +00:00"
-                    }]
+                    }]```
  
 
 SEARCH DWEETERS
@@ -132,7 +132,7 @@ Requesty Headers    : Content-Type: application/json
 
 Response Status Code: 200 OK
 
-Response Body       : [{
+Response Body       : ```json[{
                         "id": 1,
                         "username": "polo",
                         "fullName": "polo",
@@ -144,7 +144,7 @@ Response Body       : [{
                         "fullName": "Popeye",
                         "createdAt": "2021-04-18T11:05:16.745Z",
                         "updatedAt": "2021-04-18T11:05:16.745Z"
-                    }]
+                    }]```
  
 
 FOLLOW ANOTHER DWEETER
@@ -159,20 +159,20 @@ Request Method      : POST
 Requesty Headers    : Content-Type: application/json
                       Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjE4NzQxNTc2fQ.GRsG-2RhepQQsQb6EA_bS2wZDWqYh6F3eFZuISckAR0
 
-Request Body       : {
+Request Body       : ```json{
                         "userId": 1
-                    }
+                    }```
                     (where "userId" in body is the Id of the Dweeter whom the userId(follower) in url want to follow )
 
 Response Status Code: 201 Created
 
-Response Body       : {
+Response Body       : ```json{
                         "id": 12,
                         "userId": 1,
                         "followerId": "4",
                         "updatedAt": "2021-04-18T11:11:18.886Z",
                         "createdAt": "2021-04-18T11:11:18.886Z"
-                    }
+                    }```
 
 
 GET LIST OF FOLLOWERS
@@ -189,7 +189,7 @@ Requesty Headers    : Content-Type: application/json
 
 Response Status Code: 200 OK
 
-Response Body       : [{
+Response Body       : ```json[{
                         "followerId": 1
                     },
                     {
@@ -197,7 +197,7 @@ Response Body       : [{
                     },
                     {
                         "followerId": 4
-                    }]
+                    }]```
 
 GET LIST OF USERS I FOLLOW
 --------------------------------
@@ -213,7 +213,7 @@ Requesty Headers    : Content-Type: application/json
 
 Response Status Code: 200 OK
 
-Response Body       : [{
+Response Body       : ```json[{
                         "userId": 1
                     }, {
                         "userId": 2
@@ -221,7 +221,7 @@ Response Body       : [{
                         "userId": 3
                     }, {
                         "userId": 4
-                    }]
+                    }]```
 
 SEARCH DWEETS
 -------------
@@ -237,7 +237,7 @@ Requesty Headers    : Content-Type: application/json
 
 Response Status Code: 200 OK
 
-Response Body       : [{
+Response Body       : ```json[{
                         "id": 1,
                         "fullName": "polo",
                         "username": "polo",
@@ -258,7 +258,7 @@ Response Body       : [{
                         "dweetText": "Charlie Brown's first Dweet",
                         "dweetImg": "",
                         "createdAt": "2021-04-18 11:06:54.767 +00:00"
-                    }]
+                    }]```
  
 
 LIKE A DWEET
@@ -273,21 +273,21 @@ Request Method      : POST
 Requesty Headers    : Content-Type: application/json
                       Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjE4NzQxNTc2fQ.GRsG-2RhepQQsQb6EA_bS2wZDWqYh6F3eFZuISckAR0
 
-Request Body        : {
+Request Body        : ```json{
                         "reactorId": "4"
-                    }
+                    }```
                     (Where "reactorId is the Id of the person reacting/liking a dweet)
 
 Response Status Code: 201 Created
 
-Response Body       : {
+Response Body       : ```json{
                         "id": 1,
                         "dweetId": "1",
                         "reactorId": "4",
                         "reactionType": "like",
                         "updatedAt": "2021-04-18T11:14:24.789Z",
                         "createdAt": "2021-04-18T11:14:24.789Z"
-                    }
+                    }```
  
 
 GET LIKE DETAILS ON A DWEET
@@ -304,7 +304,7 @@ Requesty Headers    : Content-Type: application/json
 
 Response Status Code: 200 OK
 
-Response Body       : [{
+Response Body       : ```json[{
                         "id": 3,
                         "fullName": "polo",
                         "username": "polo",
@@ -316,7 +316,7 @@ Response Body       : [{
                         "username": "popeye",
                         "reactorId": 4,
                         "createdAt": "2021-04-18 11:16:26.462 +00:00"
-                    }]
+                    }]```
  
 
 COMMENT ON A DWEET
@@ -331,21 +331,21 @@ Request Method      : POST
 Requesty Headers    : Content-Type: application/json
                       Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjE4NzQxNTc2fQ.GRsG-2RhepQQsQb6EA_bS2wZDWqYh6F3eFZuISckAR0
 
-Request Body        : {
+Request Body        : ```json{
                         "commenterId": "4",
                         "commentText": "Hello Charlie, good dweet"
-                    }
+                    }```
 
 Response Status Code: 201 Created
 
-Response Body       : {
+Response Body       : ```json{
                         "id": 4,
                         "dweetId": "3",
                         "commenterId": "4",
                         "commentText": "Hello Charlie, good dweet",
                         "updatedAt": "2021-04-18T11:21:30.120Z",
                         "createdAt": "2021-04-18T11:21:30.120Z"
-                    }
+                    }```
  
 
 GET ALL COMMENTS ON A DWEET
@@ -362,7 +362,7 @@ Requesty Headers    : Content-Type: application/json
 
 Response Status Code: 200 OK
 
-Response Body       : [{
+Response Body       : ```json[{
                         "id": 1,
                         "fullName": "polo",
                         "username": "polo",
@@ -383,7 +383,7 @@ Response Body       : [{
                         "commenterId": 4,
                         "commentText": "Hey Bunny ...how are you?",
                         "createdAt": "2021-04-18 11:17:29.870 +00:00"
-                    }]
+                    }]```
 
 GET ALL DWEETS FROM A USER
 --------------------------
@@ -399,7 +399,7 @@ Requesty Headers    : Content-Type: application/json
 
 Response Status Code: 200 OK
 
-Response Body       : [{
+Response Body       : ```json[{
                             "id": 4,
                             "userId": 4,
                             "dweetText": "Hello Everyon, Popoye here!!",
@@ -413,7 +413,7 @@ Response Body       : [{
                             "dweetImg": "",
                             "createdAt": "2021-04-18T11:25:07.948Z",
                             "updatedAt": "2021-04-18T11:25:07.948Z"
-                        }]
+                        }]```
  
  GET A PARTICULAR DWEET FROM A USER
 -----------------------------------
@@ -429,14 +429,14 @@ Requesty Headers    : Content-Type: application/json
 
 Response Status Code: 200 OK
 
-Response Body       : {
+Response Body       : ```json{
                         "id": 5,
                         "userId": 4,
                         "dweetText": "How are you !!",
                         "dweetImg": "",
                         "createdAt": "2021-04-18T11:25:07.948Z",
                         "updatedAt": "2021-04-18T11:25:07.948Z"
-                    }
+                    }```
 
  
 
