@@ -5,7 +5,7 @@ const User = require('../models/User');
 const { Op } = require('sequelize');
 const sequelize = require('./../database');
 
-// Get /api/v1/dweeters/search/dweeter => Search dweeter
+// Get //api/v1/user/search/dweeter => Search DWEETER
 router.get('/dweeter', async (req, res) => {
   logger.info(`GET Search dweeter (${req.query.searchText}) > /api/v1/user/search/dweeter`);
   const searcht = '%' + req.query.searchText + '%';
@@ -20,22 +20,10 @@ router.get('/dweeter', async (req, res) => {
   res.send(user);
 });
 
-// Get /api/v1/dweeters/search/dweet => Search a dweet
-/*router.get('/dweet', async (req, res) => {
-  logger.info(`GET Search dweeter (${req.query.searchText}) > /api/v1/dweeters/search/dweeter/dweet`);
-  const searcht = '%' + req.query.searchText + '%';
-  const user = await Dweets.findAll({
-    where: {
-      [Op.or]: [{ dweetText: { [Op.like]: searcht } }],
-    },
-  });
-  res.send(user);
-});*/
-
+//GET /api/v1/users/search/dweet => Search DWEET
 router.get('/dweet', async (req, res) => {
-  logger.info(`GET Search dweeter (${req.query.searchText}) > /api/v1/users/search/dweeter/dweet`);
+  logger.info(`GET Search dweet (${req.query.searchText}) > /api/v1/users/search/dweet`);
   const searcht = '%' + req.query.searchText + '%';
- 
 
   sequelize
         .query(

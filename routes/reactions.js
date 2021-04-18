@@ -3,10 +3,10 @@ const logger = require('../lib/logger');
 const Reactions = require('../models/Reactions');
 const sequelize = require('./../database');
 
-// GET /api/v1/users/:userId/dweets => Get all the reactions for a dweet
+// GET /api/v1/users/reactions/:dweetId => Get all the reactions for a dweet
 router.get('/:dweetId', (req, res) => {
   logger.info(
-    `GET all reactions for dweet (${req.params['dweetId']}) > /api/v1/users/:userId/reactions/:dweetId`
+    `GET all reactions for dweet (${req.params['dweetId']}) > /api/v1/users/reactions/:dweetId`
   );
   /*Reactions.findAll({
     where: {

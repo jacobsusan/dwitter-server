@@ -3,9 +3,9 @@ const logger = require('../lib/logger');
 const Comments = require('../models/Comments');
 const sequelize = require('./../database');
 
-// GET /api/v1/dweeters/:dweeterId/dweets => Get all the comments for a dweet
+// GET /api/v1/users/comments/:dweetId => Get all the comments for a dweet
 router.get('/:dweetId', (req, res) => {
-  logger.info(`GET all comments for dweet (${req.params['dweetId']}) > /api/v1/dweeters/comments/:dweetId`);
+  logger.info(`GET all comments for dweet (${req.params['dweetId']}) > /api/v1/users/comments/:dweetId`);
   /*Comments.findAll({
     where: {
       dweetId: req.params['dweetId'],
@@ -36,9 +36,9 @@ router.get('/:dweetId', (req, res) => {
     });
 });
 
-// POST /api/v1/dweeters/:dweeterId/dweets => Comment on a dweet
+// POST  /api/v1/users/comments/:dweetId => Comment on a dweet
 router.post('/:dweetId', (req, res) => {
-  console.log(`POST Comment on dweet (${req.params['dweetId']}) > /api/v1/dweeters/comments/:dweetId`);
+  console.log(`POST Comment on dweet (${req.params['dweetId']}) > /api/v1/users/comments/:dweetId`);
   Comments.create(
     {
       dweetId: req.params.dweetId,

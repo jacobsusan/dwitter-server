@@ -22,10 +22,10 @@ router.get('/', (req, res) => {
     });
 });
 
-// POST /api/v1/dweeters/:userId/dweets => Create a dweet
+// POST /api/v1/users/:userId/dweets => Create a dweet
 router.post('/', (req, res) => {
   logger.info(
-    `POST a dweet by (${req.params['userId']}) > /api/v1/dweeters/:userId/dweets`
+    `POST a dweet by (${req.params['userId']}) > /api/v1/users/:userId/dweets`
   );
   Dweets.create(
     {
@@ -50,12 +50,12 @@ router.post('/', (req, res) => {
 // GET /api/v1/users/:userId/dweets/:id => Get one particular dweet
 router.get('/:id', async (req, res) => {
   logger.info(
-    `GET one particular dweet (${req.params['id']}) by (${req.params['userId']}) > /api/v1/dweeters/:userId/dweets/:id`
+    `GET one particular dweet (${req.params['id']}) by (${req.params['userId']}) > /api/v1/users/:userId/dweets/:id`
   );
   Dweets.findOne({
     where: {
       id: req.params['id'],
-      dweeterId: req.params['userId'],
+      userId: req.params['userId'],
     },
   })
     .then((dweet) => {
