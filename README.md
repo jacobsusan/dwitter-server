@@ -19,11 +19,11 @@ Request Method      : POST
 
 Requesty Headers    : Content-Type: application/json
 
-Request Body        : {
+Request Body        : ```{
                         "username": "popeye",
                         "fullName": "Popeye",
                         "password": "popeye"
-                    }
+                    }```
 
 Response Status Code: 201 Created
 
@@ -175,7 +175,7 @@ Response Body       : {
                     }
 
 
-GET List of Followers
+GET LIST OF FOLLOWERS
 ---------------------
 API Description     : Get list of followers
 
@@ -199,7 +199,7 @@ Response Body       : [{
                         "followerId": 4
                     }]
 
-GET List of users that I follow
+GET LIST OF USERS I FOLLOW
 --------------------------------
 API Description     : Get list of followers
 
