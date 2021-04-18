@@ -6,59 +6,71 @@ Tech Stack : Node.js
 Framework : Express.js
 
 
-APIS
+API Specification
 =====
 
-SIGN UP DWEETER
----------------
+Sign Up
+-------
 API Description     : Create/Add a new dweeter
 
-Url                 : http://localhost:3002/signup
+Url                 : `http://localhost:3002/signup`
 
-Request Method      : POST
+Request Method      : `POST`
 
-Requesty Headers    : Content-Type: application/json
+Requesty Headers    : `Content-Type: application/json`
 
-Request Body        : ```json{
-                        "username": "popeye",
-                        "fullName": "Popeye",
-                        "password": "popeye"
-                    }```
+Request Body        : 
+```json
+{
+    "username": "popeye",
+    "fullName": "Popeye",
+    "password": "popeye"
+}
+```
 
-Response Status Code: 201 Created
+Response Status Code: `201 Created`
 
-Response Body       : ```json{
-                        "id": 4,
-                        "username": "popeye",
-                        "fullName": "Popeye",
-                        "createdAt": "2021-04-18T11:05:16.745Z",
-                        "updatedAt": "2021-04-18T11:05:16.745Z"
-                    }```
+Response Body       : 
+```json
+{
+    "id": 4,
+    "username": "popeye",
+    "fullName": "Popeye",
+    "createdAt": "2021-04-18T11:05:16.745Z",
+    "updatedAt": "2021-04-18T11:05:16.745Z"
+}
+```
 
 
-LOG IN DWEETER
----------------
+Login
+-----
 API Description     : Log into the system using username and password
 
-Url                 : http://localhost:3002/login
+Url                 : `http://localhost:3002/login`
 
-Request Method      : POST
+Request Method      : `POST`
 
-Requesty Headers    : Content-Type: application/json
+Requesty Headers    : `Content-Type: application/json`
 
-Request Body        : ```json{
-                        "username": "popeye",
-                        "password": "popeye"
-                    }```
+Request Body        : 
+```json
+{
+    "username": "popeye",
+    "password": "popeye"
+}
+```
 
-Response Status Code: 200 OK
+Response Status Code: `200 OK`
 
-Response Body       : ```json{
-                        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjE4NzQxNTc2fQ.GRsG-2RhepQQsQb6EA_bS2wZDWqYh6F3eFZuISckAR0"
-                    }```
+Response Body       : 
+```json
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7fSwiaWF0IjoxNjE4NzQxNTc2fQ.GRsG-2RhepQQsQb6EA_bS2wZDWqYh6F3eFZuISckAR0"
+}
+```
 
-GET DWEETER DETAILS
--------------------
+Get User Details
+----------------
 API Description     : Get the details of a dweeter
 
 Url                 : http://localhost:3002/api/v1/users/popeye 
